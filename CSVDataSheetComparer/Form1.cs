@@ -6,5 +6,16 @@ namespace CSVDataSheetComparer
         {
             InitializeComponent();
         }
+
+        private void Search_Click(object sender, EventArgs e)
+        {
+            Form2 f2 = new();
+            f2.ShowDialog();
+        }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

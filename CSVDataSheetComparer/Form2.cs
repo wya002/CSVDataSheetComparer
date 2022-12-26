@@ -16,5 +16,35 @@ namespace CSVDataSheetComparer
         {
             InitializeComponent();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.InitialDirectory = "C:\\Downloads";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                textSheet1.Text = ofd.FileName;
+            }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd2 = new OpenFileDialog();
+            ofd2.InitialDirectory = "C:\\Downloads";
+            if (ofd2.ShowDialog() == DialogResult.OK)
+            {
+                textSheet2.Text = ofd2.FileName;
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void applyButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
