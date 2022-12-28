@@ -7,13 +7,23 @@ namespace CSVDataSheetComparer
         public Form1()
         {
             InitializeComponent();
+
+            //홀수 행 색 변환 -> LightGray
+            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.Gainsboro;
+            dataGridView2.AlternatingRowsDefaultCellStyle.BackColor = Color.Gainsboro;
+
+            //폰트 크기 변환 -> 12
+            dataGridView1.Font = new Font("Arial", 12, FontStyle.Regular);
+            dataGridView2.Font = new Font("Arial", 12, FontStyle.Regular);
+
+            //윈쪽 윗 빈 열 값 설정
+            dataGridView1.TopLeftHeaderCell.Value = "num";
+            dataGridView2.TopLeftHeaderCell.Value = "num";
         }
 
-        public string ReceivedData1;
-        public string ReceivedData2;
+        public string ReceivedData1; // CSV 파일 1 주소
+        public string ReceivedData2; // CSV 파일 2 주소
 
-        DataTable dt = new DataTable();
-        BindingSource bs = new BindingSource();
         private void Search_Click(object sender, EventArgs e)
         {
             Form2 f2 = new();
@@ -45,6 +55,53 @@ namespace CSVDataSheetComparer
         private void Exit_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        //행 번호 입력
+        private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            Rectangle rect = new Rectangle(e.RowBounds.Location.X,
+                e.RowBounds.Location.Y,
+                dataGridView1.RowHeadersWidth - 4,
+                e.RowBounds.Height);
+
+            TextRenderer.DrawText(e.Graphics,
+                (e.RowIndex + 1).ToString(),
+                dataGridView1.RowHeadersDefaultCellStyle.Font,
+                rect,
+                dataGridView1.RowHeadersDefaultCellStyle.ForeColor,
+                TextFormatFlags.VerticalCenter | TextFormatFlags.Right);
+        }
+
+        private void dataGridView2_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            Rectangle rect = new Rectangle(e.RowBounds.Location.X,
+                e.RowBounds.Location.Y,
+                dataGridView2.RowHeadersWidth - 4,
+                e.RowBounds.Height);
+
+            TextRenderer.DrawText(e.Graphics,
+                (e.RowIndex + 1).ToString(),
+                dataGridView2.RowHeadersDefaultCellStyle.Font,
+                rect,
+                dataGridView2.RowHeadersDefaultCellStyle.ForeColor,
+                TextFormatFlags.VerticalCenter | TextFormatFlags.Right);
+        }
+
+        private void dataGridView1_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+        }
+
+        private void dataGridView2_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            foreach (DataGridViewColumn column in dataGridView2.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
     }
 }
