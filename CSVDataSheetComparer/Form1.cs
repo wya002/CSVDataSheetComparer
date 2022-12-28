@@ -19,6 +19,7 @@ namespace CSVDataSheetComparer
             //윈쪽 윗 빈 열 값 설정
             dataGridView1.TopLeftHeaderCell.Value = "num";
             dataGridView2.TopLeftHeaderCell.Value = "num";
+
         }
 
         public string ReceivedData1; // CSV 파일 1 주소
@@ -49,6 +50,21 @@ namespace CSVDataSheetComparer
                 }
                 sr.Close();
                 sr2.Close();
+
+                //컬럼 헤더 정렬 막기
+                foreach (DataGridViewColumn column in dataGridView1.Columns)
+                {
+                    column.SortMode = DataGridViewColumnSortMode.NotSortable;
+                }
+                foreach (DataGridViewColumn column in dataGridView2.Columns)
+                {
+                    column.SortMode = DataGridViewColumnSortMode.NotSortable;
+                }
+
+                //default 행 선택 막기
+                dataGridView1.CurrentCell = null;
+                dataGridView2.CurrentCell = null;
+
             }
         }
 
@@ -86,22 +102,6 @@ namespace CSVDataSheetComparer
                 rect,
                 dataGridView2.RowHeadersDefaultCellStyle.ForeColor,
                 TextFormatFlags.VerticalCenter | TextFormatFlags.Right);
-        }
-
-        private void dataGridView1_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            foreach (DataGridViewColumn column in dataGridView1.Columns)
-            {
-                column.SortMode = DataGridViewColumnSortMode.NotSortable;
-            }
-        }
-
-        private void dataGridView2_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            foreach (DataGridViewColumn column in dataGridView2.Columns)
-            {
-                column.SortMode = DataGridViewColumnSortMode.NotSortable;
-            }
         }
     }
 }
