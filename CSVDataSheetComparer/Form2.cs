@@ -25,7 +25,7 @@ namespace CSVDataSheetComparer
             {
                 textSheet1.Text = ofd.FileName;
             }
-            if(textSheet2.Text != null)
+            if(textSheet2.Text != "")
             {
                 applyButton.Enabled = true;
             }
@@ -39,7 +39,7 @@ namespace CSVDataSheetComparer
             {
                 textSheet2.Text = ofd2.FileName;
             }
-            if (textSheet1.Text != null)
+            if (textSheet1.Text != "")
             {
                 applyButton.Enabled = true;
             }

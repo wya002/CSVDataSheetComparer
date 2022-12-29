@@ -31,6 +31,14 @@ namespace CSVDataSheetComparer
             f2.Owner= this;
             if (f2.ShowDialog() == DialogResult.OK )
             {
+                //파일 재 업로드시 데이터 그리드 뷰 초기화
+                dataGridView1.Columns.Clear();
+                dataGridView2.Columns.Clear();
+                dataGridView1.Rows.Clear();
+                dataGridView2.Rows.Clear();
+                dataGridView1.Refresh();
+                dataGridView2.Refresh();
+
                 StreamReader sr = new StreamReader(@ReceivedData1);
                 StreamReader sr2 = new StreamReader(@ReceivedData2);
 
@@ -102,6 +110,17 @@ namespace CSVDataSheetComparer
                 rect,
                 dataGridView2.RowHeadersDefaultCellStyle.ForeColor,
                 TextFormatFlags.VerticalCenter | TextFormatFlags.Right);
+        }
+
+        //데이터그리드 뷰에서 선택된 셀 텍스트 박스에 출력
+        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            textBox2.Text = dataGridView1.CurrentCell.Value.ToString();
+        }
+
+        private void dataGridView2_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            textBox4.Text = dataGridView2.CurrentCell.Value.ToString();
         }
     }
 }
