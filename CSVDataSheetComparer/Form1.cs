@@ -23,6 +23,8 @@ namespace CSVDataSheetComparer
 
         public string ReceivedData1; // CSV 颇老 1 林家
         public string ReceivedData2; // CSV 颇老 2 林家
+        public int RowNum = 0;
+        public int RowNum2 = 1;
 
         private void Search_Click(object sender, EventArgs e)
         {
@@ -50,10 +52,12 @@ namespace CSVDataSheetComparer
                 foreach(string cols in line.Split(','))
                 {
                     dataGridView1.Rows.Add(cols);
+                    RowNum += 1;
                 }
                 foreach(string cols in line2.Split(','))
                 {
                     dataGridView2.Rows.Add(cols);
+                    RowNum += 2;
                 }
                 sr.Close();
                 sr2.Close();
@@ -132,7 +136,7 @@ namespace CSVDataSheetComparer
 
         private void make_Chart_Click(object sender, EventArgs e)
         {
-            Form3 f3 = new(textBox2.Text, textBox4.Text);
+            Form3 f3 = new(textBox2.Text, textBox4.Text, ReceivedData1, ReceivedData2, RowNum, RowNum2);
 
             f3.ShowDialog();
         }
