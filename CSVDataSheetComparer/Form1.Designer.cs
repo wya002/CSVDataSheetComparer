@@ -133,6 +133,7 @@
             this.make_Chart.TabIndex = 4;
             this.make_Chart.Text = "Make Chart";
             this.make_Chart.UseVisualStyleBackColor = true;
+            this.make_Chart.Click += new System.EventHandler(this.make_Chart_Click);
             // 
             // Base
             // 

@@ -19,7 +19,6 @@ namespace CSVDataSheetComparer
             //扩率 拉 后 凯 蔼 汲沥
             dataGridView1.TopLeftHeaderCell.Value = "num";
             dataGridView2.TopLeftHeaderCell.Value = "num";
-
         }
 
         public string ReceivedData1; // CSV 颇老 1 林家
@@ -116,11 +115,19 @@ namespace CSVDataSheetComparer
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             textBox2.Text = dataGridView1.CurrentCell.Value.ToString();
+            if(textBox2.Text != "" && textBox4.Text != "")
+            {
+                make_Chart.Enabled = true;
+            }
         }
 
         private void dataGridView2_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             textBox4.Text = dataGridView2.CurrentCell.Value.ToString();
+            if (textBox2.Text != "" && textBox4.Text != "")
+            {
+                make_Chart.Enabled = true;
+            }
         }
     }
 }
