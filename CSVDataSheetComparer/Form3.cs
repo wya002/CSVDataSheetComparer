@@ -23,7 +23,10 @@ namespace CSVDataSheetComparer
         public int RowNum;
         public int RowNum2;
 
-        public Form3(string y1, string y2, string path1, string path2, int num1, int num2)
+        public int IndexNum;
+        public int IndexNum2;
+
+        public Form3(string y1, string y2, string path1, string path2, int num1, int num2, int index1, int index2)
         {
             InitializeComponent();
 
@@ -35,6 +38,9 @@ namespace CSVDataSheetComparer
 
             RowNum = num1;
             RowNum2 = num2;
+
+            IndexNum = index1;
+            IndexNum2 = index2;
 
             List<string[]> list = new();
             List<string[]> list2 = new();
@@ -48,22 +54,23 @@ namespace CSVDataSheetComparer
                 string line2 = sr2.ReadLine();
 
                 string[] data = line.Split(',');
-                string[] data2 = line2.Split(',');]
+                string[] data2 = line2.Split(',');
 
                 list.Add(data);
                 list2.Add(data2);
             }
 
+            //Base 값
             textBox5.Text = "1";
             textBox6.Text = (list.Count-1).ToString();
-            textBox7.Text = list[1][list.IndexOf()];
-            textBox8.Text = list[list.Count() - 1][0];
+            textBox7.Text = list[1][IndexNum];
+            textBox8.Text = list[list.Count() - 1][IndexNum];
 
+            //Comparing 값
             textBox9.Text = "1";
             textBox10.Text = (list2.Count - 1).ToString();
-            textBox11.Text = list2[1][0];
-            textBox12.Text = list2[list2.Count() - 1][0];
-
+            textBox11.Text = list2[1][IndexNum2];
+            textBox12.Text = list2[list2.Count() - 1][IndexNum2];
         }
 
         private void cancel_Click(object sender, EventArgs e)

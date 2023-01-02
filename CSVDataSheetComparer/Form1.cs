@@ -23,6 +23,7 @@ namespace CSVDataSheetComparer
 
         public string ReceivedData1; // CSV 颇老 1 林家
         public string ReceivedData2; // CSV 颇老 2 林家
+
         public int RowNum = 0;
         public int RowNum2 = 1;
 
@@ -136,7 +137,8 @@ namespace CSVDataSheetComparer
 
         private void make_Chart_Click(object sender, EventArgs e)
         {
-            Form3 f3 = new(textBox2.Text, textBox4.Text, ReceivedData1, ReceivedData2, RowNum, RowNum2);
+            Form3 f3 = new(textBox2.Text, textBox4.Text, ReceivedData1, ReceivedData2, RowNum, RowNum2
+                ,dataGridView1.CurrentCell.RowIndex, dataGridView2.CurrentCell.RowIndex);
 
             f3.ShowDialog();
         }
