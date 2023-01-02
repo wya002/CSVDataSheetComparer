@@ -129,5 +129,12 @@ namespace CSVDataSheetComparer
                 make_Chart.Enabled = true;
             }
         }
+
+        private void make_Chart_Click(object sender, EventArgs e)
+        {
+            Form3 f3 = new(textBox2.Text, textBox4.Text);
+
+            f3.ShowDialog();
+        }
     }
 }
