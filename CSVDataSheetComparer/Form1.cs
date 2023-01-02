@@ -57,7 +57,7 @@ namespace CSVDataSheetComparer
                 foreach(string cols in line2.Split(','))
                 {
                     dataGridView2.Rows.Add(cols);
-                    RowNum += 2;
+                    RowNum2 += 1;
                 }
                 sr.Close();
                 sr2.Close();
