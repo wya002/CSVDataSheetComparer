@@ -321,6 +321,7 @@
             this.applyChart.TabIndex = 2;
             this.applyChart.Text = "Apply";
             this.applyChart.UseVisualStyleBackColor = true;
+            this.applyChart.Click += new System.EventHandler(this.applyChart_Click);
             // 
             // cancel
             // 
