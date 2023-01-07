@@ -21,6 +21,8 @@
 
 --------------------------
 # 📒차트출력화면
+(temporary code)
+
 
 using System;
 using System.Collections.Generic;
@@ -156,3 +158,6 @@ namespace WindowsFormsApp2
 
     }
 }
+
+
+============================
