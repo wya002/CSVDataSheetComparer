@@ -11,16 +11,19 @@
 # 📒CSV로딩화면
 <img src="https://user-images.githubusercontent.com/75249093/210582093-e29fa59e-b98f-4efb-a1c9-5de734144714.png" width="800" height="400"/>
 
-<img src="https://user-images.githubusercontent.com/75249093/210581581-f806b878-60d3-4908-b170-d0e6b8c934d5.png" width="600" height="400"/>
+<img src="https://user-images.githubusercontent.com/75249093/211336367-bc4131f3-13cf-42dc-9fdc-00e58bd899dd.png" width="600" height="400"/>
+
 
 
 --------------------------
 # 📒파라미터확인화면
-<img src="https://user-images.githubusercontent.com/75249093/210582742-840b8b5f-8a28-42d7-976c-0b8a12da9269.png" width="600" height="400"/>
+<img src="https://user-images.githubusercontent.com/75249093/211336785-c789a83b-2c88-446d-953d-817f3c0b0f8c.png" width="600" height="400"/>
+
 
 
 --------------------------
 # 📒차트출력화면
+<img src="https://user-images.githubusercontent.com/75249093/211337352-c2ab785b-4a97-4428-9b68-52131fc4c091.png" width="600" height="400"/>
 
 
-============================
+--------------------------
