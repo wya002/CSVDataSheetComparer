@@ -44,6 +44,11 @@ namespace CSVDataSheetComparer
                 StreamReader sr = new StreamReader(@ReceivedData1);
                 StreamReader sr2 = new StreamReader(@ReceivedData2);
 
+                string first_FileName = ReceivedData1.Substring(ReceivedData1.LastIndexOf('\\') + 1);
+                string second_FileName = ReceivedData2.Substring(ReceivedData2.LastIndexOf('\\') + 1);
+                label3.Text = label3.Text + " " + first_FileName;
+                label4.Text = label4.Text + " " + second_FileName;
+
                 dataGridView1.Columns.Add("Attribute", "Attribute");
                 dataGridView2.Columns.Add("Attribute", "Attribute");
 

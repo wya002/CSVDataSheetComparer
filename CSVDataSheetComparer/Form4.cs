@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.Design;
 
 namespace CSVDataSheetComparer
 {
@@ -21,7 +22,7 @@ namespace CSVDataSheetComparer
             List<decimal> temp_y = new List<decimal>();
             List<decimal> temp_compare_y = new List<decimal>();
 
-            for (int i = 1; i <= y.Count()-1; i += rowcount1)
+            for (int i = 1; i <= y.Count()-1; i += 1)
             {
                 try
                 {
@@ -33,7 +34,7 @@ namespace CSVDataSheetComparer
                 }
             }
             //double의 값을 넘어가는 값은 예외처리
-            for (int i = 1; i <= compare_y.Count() - 1; i += rowcount2)
+            for (int i = 1; i <= compare_y.Count() - 1; i += 1)
             {
                 try
                 {
@@ -66,8 +67,13 @@ namespace CSVDataSheetComparer
                     continue;
                 }
             }
-            chart1.Series[0].Name = filename1 + " - " + y1;
-            chart1.Series[1].Name = filename2 + " - " + y2;
+
+            string first_FileName = filename1.Substring(filename1.LastIndexOf('\\') + 1);
+            string name1 = first_FileName.Substring(0, first_FileName.LastIndexOf('.'));
+            string second_FileName = filename2.Substring(filename2.LastIndexOf('\\') + 1);
+            string name2 = second_FileName.Substring(0, second_FileName.LastIndexOf('.'));
+            chart1.Series[0].Name = name1 + " - " + y1;
+            chart1.Series[1].Name = name2 + " - " + y2;
         }
 
         private void button1_Click_1(object sender, EventArgs e)
