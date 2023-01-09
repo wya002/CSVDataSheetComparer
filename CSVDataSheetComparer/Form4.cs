@@ -37,7 +37,7 @@ namespace CSVDataSheetComparer
             {
                 try
                 {
-                    temp_compare_y.Add(decimal.Parse(compare_y[i][IndexNum]));
+                    temp_compare_y.Add(decimal.Parse(compare_y[i][IndexNum2]));
                 }
                 catch
                 {

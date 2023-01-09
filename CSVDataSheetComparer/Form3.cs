@@ -86,7 +86,7 @@ namespace CSVDataSheetComparer
 
         private void applyChart_Click(object sender, EventArgs e)
         {
-            Form4 f4 = new Form4(first_y, second_y, list, list2, IndexNum, IndexNum2, RowNum, RowNum2, recievedData1, recievedData2);
+            Form4 f4 = new Form4(first_y, second_y, list, list2, IndexNum, IndexNum2, RowNum, RowNum2, first_path, second_path);
             f4.ShowDialog();
         }
     }
