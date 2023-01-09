@@ -29,9 +29,15 @@ namespace CSVDataSheetComparer
         public List<string[]> list = new();
         public List<string[]> list2 = new();
 
+        public string first_y;
+        public string second_y;
+
         public Form3(string y1, string y2, string path1, string path2, int num1, int num2, int index1, int index2)
         {
             InitializeComponent();
+
+            first_y= y1;
+            second_y= y2;
 
             textBox2.Text = y1;
             textBox4.Text = y2;
@@ -80,7 +86,7 @@ namespace CSVDataSheetComparer
 
         private void applyChart_Click(object sender, EventArgs e)
         {
-            Form4 f4 = new Form4(list, list2, );
+            Form4 f4 = new Form4(first_y, second_y, list, list2, IndexNum, IndexNum2, RowNum, RowNum2, recievedData1, recievedData2);
             f4.ShowDialog();
         }
     }

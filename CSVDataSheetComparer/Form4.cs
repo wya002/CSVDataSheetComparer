@@ -14,18 +14,18 @@ namespace CSVDataSheetComparer
     public partial class Form4 : Form
     {
         public string attribute1, attribute2;
-        public Form4(string y1, string y2, List<string> y, List<string> compare_y, string range3, string range4, 
-            string range7, string range8, int rowcount1, int rowcount2, string filename1, string filename2)
+        public Form4(string y1, string y2, List<string[]> y, List<string[]> compare_y,
+            int IndexNum, int IndexNum2, int rowcount1, int rowcount2, string filename1, string filename2)
         {
             InitializeComponent();
             List<decimal> temp_y = new List<decimal>();
             List<decimal> temp_compare_y = new List<decimal>();
 
-            for (int i = y.IndexOf(y1) + rowcount1; i <= y.Count - rowcount1 + y.IndexOf(y1); i += rowcount1)
+            for (int i = 1; i <= y.Count()-1; i += rowcount1)
             {
                 try
                 {
-                    temp_y.Add(decimal.Parse(y[i]));
+                    temp_y.Add(decimal.Parse(y[i][IndexNum]));
                 }
                 catch
                 {
@@ -33,11 +33,11 @@ namespace CSVDataSheetComparer
                 }
             }
             //double의 값을 넘어가는 값은 예외처리
-            for (int i = compare_y.IndexOf(y2) + rowcount2; i <= compare_y.Count - rowcount2 + compare_y.IndexOf(y2); i += rowcount2)
+            for (int i = 1; i <= compare_y.Count() - 1; i += rowcount2)
             {
                 try
                 {
-                    temp_compare_y.Add(decimal.Parse(compare_y[i]));
+                    temp_compare_y.Add(decimal.Parse(compare_y[i][IndexNum]));
                 }
                 catch
                 {
