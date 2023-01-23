@@ -18,6 +18,7 @@
 
 <img src="https://user-images.githubusercontent.com/75249093/211336367-bc4131f3-13cf-42dc-9fdc-00e58bd899dd.png" width="600" height="400"/>
 
+ * 상단에 로드된 두 csv파일의 이름이 출력된다.
  * 불러온 데이터시트의 속성을 더블클릭하면 좌측의 y축 데이터 속성이 설정된다.
 
 #
