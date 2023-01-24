@@ -1,7 +1,11 @@
 ## 📒CSVDataSheetComparer
 2개의 CSV 데이터 파일을 파싱하여 특정 어트리뷰트의 값을 비교 분석하는 프로그램
 
-|사용 언어| 사용 프레임워크 |
+|IDE| Version |
+|--------|-----|
+|Visual Studio Community 2022| 17.4.3 |
+
+|Language| Framework |
 |--------|-----|
 |C#| Windows Form (.NET6) |
 
