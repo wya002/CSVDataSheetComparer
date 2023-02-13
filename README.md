@@ -1,5 +1,5 @@
 
-## 📊CSVDataSheetComparer #
+## 📊CSVDataSheetComparer
 ### 2개의 CSV 데이터 파일을 파싱하여 속성 값을 서로 비교 분석하는 프로그램
 
 |IDE| Version |
